@@ -57,7 +57,6 @@ public class EnderecoService {
             return baseResponse;
         }
 
-
         endereco.setLogradouro(enderecoRequest.getLogradouro());
         endereco.setNumero(enderecoRequest.getNumero());
         endereco.setComplemento(enderecoRequest.getComplemento());

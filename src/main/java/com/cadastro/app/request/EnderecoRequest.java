@@ -10,6 +10,20 @@ public class EnderecoRequest {
     private String cep;
     private long pessoa;
 
+    public EnderecoRequest() {
+    }
+
+    public EnderecoRequest(String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String cep, long pessoa) {
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+        this.pessoa = pessoa;
+    }
+
     public String getLogradouro() {
         return logradouro;
     }
@@ -74,17 +88,4 @@ public class EnderecoRequest {
         this.pessoa = pessoa;
     }
 
-    public EnderecoRequest(String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String cep, long pessoa) {
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.cep = cep;
-        this.pessoa = pessoa;
-    }
-
-    public EnderecoRequest() {
-    }
 }

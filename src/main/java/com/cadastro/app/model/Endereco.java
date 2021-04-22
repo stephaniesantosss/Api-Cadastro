@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String logradouro;
     private String numero;
     private String complemento;
@@ -20,11 +20,29 @@ public class Endereco {
     @JoinColumn(name = "idPessoa", nullable = false)
     private Pessoa pessoa;
 
-    public long getId() {
+    public Endereco() {
+    }
+
+    public Endereco(Long id, String logradouro, String numero,
+                    String complemento, String bairro,
+                    String cidade, String estado,
+                    String cep, Pessoa pessoa) {
+        this.id = id;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+        this.pessoa = pessoa;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -92,21 +110,4 @@ public class Endereco {
         this.pessoa = pessoa;
     }
 
-    public Endereco(long id, String logradouro, String numero,
-                    String complemento, String bairro,
-                    String cidade, String estado,
-                    String cep, Pessoa pessoa) {
-        this.id = id;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.cep = cep;
-        this.pessoa = pessoa;
-    }
-
-    public Endereco() {
-    }
 }

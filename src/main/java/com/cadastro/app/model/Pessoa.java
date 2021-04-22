@@ -10,7 +10,7 @@ import javax.validation.constraints.Email;
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
     @Email
     @Column(unique = true)
@@ -20,14 +20,14 @@ public class Pessoa {
     private String cpf;
     private String dataNasc;
 
-    public Pessoa(long pessoa) {
+    public Pessoa(Long pessoa) {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

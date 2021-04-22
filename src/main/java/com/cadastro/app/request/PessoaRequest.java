@@ -13,6 +13,16 @@ public class PessoaRequest {
     private String cpf;
     private String dataNasc;
 
+    public PessoaRequest() {
+    }
+
+    public PessoaRequest(String nome, @Email String email, @CPF String cpf, String dataNasc) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.dataNasc = dataNasc;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -45,13 +55,4 @@ public class PessoaRequest {
         this.dataNasc = dataNasc;
     }
 
-    public PessoaRequest(String nome, @Email String email, @CPF String cpf, String dataNasc) {
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.dataNasc = dataNasc;
-    }
-
-    public PessoaRequest() {
-    }
 }

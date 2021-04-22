@@ -22,12 +22,12 @@ public class PessoaService {
         boolean emailDuplicado = pessoaRepository.existsByEmail(pessoaRequest.getEmail());
         boolean cpfDuplicado = pessoaRepository.existsByCpf(pessoaRequest.getCpf());
 
-        if (pessoaRequest.getNome().isEmpty() || pessoaRequest.getNome() == null) {
+        if (pessoaRequest.getNome().isBlank()) {
             baseResponse.setMessage("Favor preencher com o nome!");
             return baseResponse;
         }
 
-        if (pessoaRequest.getEmail().isEmpty() || pessoaRequest.getEmail() == null) {
+        if (pessoaRequest.getEmail().isBlank()) {
             baseResponse.setMessage("Favor preencher com o e-mail!");
             return baseResponse;
         }
@@ -35,7 +35,7 @@ public class PessoaService {
             baseResponse.setMessage("Este e-mail já está cadastrado!");
             return baseResponse;
         }
-        if (pessoaRequest.getCpf().isEmpty() || pessoaRequest.getCpf() == null) {
+        if (pessoaRequest.getCpf().isBlank()) {
             baseResponse.setMessage("Favor preencher com o CPF!");
             return baseResponse;
         }
@@ -43,10 +43,11 @@ public class PessoaService {
             baseResponse.setMessage("Este cpf já está cadastrado!");
             return baseResponse;
         }
-        if (pessoaRequest.getDataNasc().isEmpty() || pessoaRequest.getDataNasc() == null) {
+        if (pessoaRequest.getDataNasc().isBlank()) {
             baseResponse.setMessage("Favor preencher com a data de nascimento!");
             return baseResponse;
         }
+
         pessoa.setNome(pessoaRequest.getNome());
         pessoa.setEmail(pessoaRequest.getEmail());
         pessoa.setCpf(pessoaRequest.getCpf());
